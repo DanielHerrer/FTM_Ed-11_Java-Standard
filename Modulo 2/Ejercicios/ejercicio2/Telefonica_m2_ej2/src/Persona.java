@@ -1,11 +1,19 @@
 
 public class Persona {
-    private String nombre = "";
-    private byte edad;
-    private char sexo;
-    private String dni;
-    private Boolean bCasado;
+    String nombre = "";
+    byte edad;
+    char sexo;
+    String dni;
+    Boolean bCasado;
 
+
+    public Persona(){
+        this.nombre = "";
+        this.edad = 0;
+        this.sexo = 'X';
+        this.dni = "";
+        this.bCasado = null;
+    }
 
     public Persona(String nombre, byte edad, char sexo, String dni, Boolean bCasado){
         this.nombre = nombre;
@@ -23,13 +31,45 @@ public class Persona {
                             "\nCasado: "+bCasado);
     }
 
-    public Boolean equals(Persona objeto){
-        if(this == objeto)
-            return true;
-        if(objeto == null)
-            return false;
-        if(getClass() != objeto.getClass())
-            return false;
+    @Override
+    public String toString() {
+        return "Persona [nombre=" + nombre + ", edad=" + edad + ", sexo=" + sexo + ", dni=" + dni + ", bCasado="
+                + bCasado + "]";
+    }
+
+    @Override
+    public boolean equals(Object objeto){   // COMPARA SI DOS OBJETOS SON IGUALES
+        boolean igual = false;  // Inicializo el boolean en false para que no de error.
+        if(this == objeto){     
+            igual = true;
+        }
+        if(objeto == null){
+            igual = false;
+        }
+        if(getClass() != objeto.getClass()){
+            igual = false;
+        }
+        Persona otro = (Persona) objeto;
+        if(nombre == null){
+            if(otro.nombre != null){
+                igual = false;
+            }
+        }else if(!nombre.equals(otro.nombre)){
+            igual = false;
+        }
+        if(edad != otro.edad){
+            igual = false;
+        }
+        if(sexo != otro.sexo){
+            igual = false;
+        }
+        if(dni != otro.dni){
+            igual = false;
+        }
+        if(bCasado != otro.bCasado){
+            igual = false;
+        }
+        return igual;
     }
 
     public String getNombre() {
