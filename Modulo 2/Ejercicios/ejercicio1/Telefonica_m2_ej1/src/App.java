@@ -1,7 +1,5 @@
-package com.daniel.puntos;
-
-public class PruebaPunto {
-    public static void main(String[] args){
+public class App {
+    public static void main(String[] args) throws Exception {
 
         Punto objeto1 = new Punto();
         Punto objeto2 = new Punto(25,86);
@@ -35,5 +33,4 @@ public class PruebaPunto {
         }
 
     }
-
 }

@@ -1,5 +1,3 @@
-package com.daniel.puntos;
-
 public class Punto {
 
     int x, y;
